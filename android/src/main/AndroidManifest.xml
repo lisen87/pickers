@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.leeson.pickers">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".PermissionActivity" android:theme="@style/TransTheme"/>
+        <activity android:name=".SelectPicsActivity" android:screenOrientation="portrait"/>
+
+        <provider
+            android:name=".provides.MyProvide"
+            android:authorities="com.leeson.pickers.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/pickers_plugin_file_path" />
+        </provider>
+    </application>
+</manifest>
