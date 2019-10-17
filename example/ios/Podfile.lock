@@ -1,0 +1,28 @@
+PODS:
+  - Flutter (1.0.0)
+  - pickers (0.0.1):
+    - Flutter
+  - video_player (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - pickers (from `.symlinks/plugins/pickers/ios`)
+  - video_player (from `.symlinks/plugins/video_player/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  pickers:
+    :path: ".symlinks/plugins/pickers/ios"
+  video_player:
+    :path: ".symlinks/plugins/video_player/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  pickers: 6388cde0c7715497d6b1aea70fbd34f98f98ee6c
+  video_player: 69c5f029fac4ffe4fc8a85ea7f7b793709661549
+
+PODFILE CHECKSUM: 10ae9c18d12c9ffc2275c9a159a3b1e281990db0
+
+COCOAPODS: 1.7.5
