@@ -8,7 +8,7 @@
 
     <application android:theme="@style/AppTheme">
         <activity android:name=".PermissionActivity" android:theme="@style/TransTheme"/>
-        <activity android:name=".SelectPicsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SelectPicsActivity" android:theme="@style/TransTheme"/>
 
         <provider
             android:name=".provides.MyProvide"

@@ -7,6 +7,7 @@ import android.content.Intent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -17,6 +18,7 @@ import io.flutter.plugin.common.PluginRegistry;
  *
  * @author lisen < 453354858@qq.com >
  */
+@SuppressWarnings("all")
 public class PickersPlugin implements MethodChannel.MethodCallHandler {
 
     private static final int WRITE_SDCARD = 101;
@@ -34,7 +36,7 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
                     openGallery();
                     return true;
                 } else if (requestCode == SELECT && resultCode == Activity.RESULT_OK) {
-                    List<String> paths = (List<String>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
+                    List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
                     result.success(paths);
                     return true;
                 }

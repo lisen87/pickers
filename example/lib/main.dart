@@ -6,6 +6,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:pickers/pickers.dart';
 import 'package:pickers/CorpConfig.dart';
+import 'package:video_player/video_player.dart';
+import 'package:pickers/Media.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,28 +17,45 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  GalleryMode _galleryMode = GalleryMode.image;
+
   @override
   void initState() {
     super.initState();
   }
 
-  List<dynamic> list;
+  List<Media> _listImagePaths = List();
+  List<Media> _listVideoPaths = List();
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    // Platform messages may fail, so we use a try/catch PlatformException.
+  Future<void> selectImages() async {
     try {
-      list = await Pickers.pickerPaths(
-          galleryMode: GalleryMode.image,
+      _galleryMode = GalleryMode.image;
+      _listImagePaths = await Pickers.pickerPaths(
+          galleryMode: _galleryMode,
           selectCount: 9,
-          showCamera: false,
-          compressSize: 1000,
-          corpConfig: CorpConfig(enableCrop: false, width: 1, height: 1));
-      print(list.toString());
-      setState(() {});
-    } on PlatformException {
-      print("PlatformExceptionPlatformExceptionPlatformException");
-    }
+          showCamera: true,
+          compressSize: 100,
+          corpConfig: CorpConfig(enableCrop: false, width: 0, height: 0));
+      print(_listImagePaths.toString());
+      setState(() {
+
+      });
+    } on PlatformException {}
+  }
+
+  Future<void> selectVideos() async {
+    try {
+      _galleryMode = GalleryMode.video;
+      _listVideoPaths = await Pickers.pickerPaths(
+        galleryMode: _galleryMode,
+        selectCount: 5,
+        showCamera: true,
+      );
+      setState(() {
+
+      });
+      print(_listVideoPaths);
+    } on PlatformException {}
   }
 
   @override
@@ -46,29 +65,58 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Column(
-
-          children: <Widget>[
-            GridView.builder(
-                itemCount: list == null ? 0 : list.length,
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    //横轴元素个数
-                    crossAxisCount: 3,
-                    //纵轴间距
-                    mainAxisSpacing: 20.0,
-                    //横轴间距
-                    crossAxisSpacing: 10.0,
-                    //子组件宽高长度比例
-                    childAspectRatio: 1.0),
-                itemBuilder: (BuildContext context, int index) {
-                  //Widget Function(BuildContext context, int index)
-                  return Image.file(File(list[index],),fit: BoxFit.cover,);
-                }),
-            RaisedButton(onPressed: (){
-              initPlatformState();
-            },child: Text("选择图片"),)
-          ],
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: <Widget>[
+              GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                  itemCount: _listImagePaths == null ? 0 : _listImagePaths.length,
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 20.0,
+                      crossAxisSpacing: 10.0,
+                      childAspectRatio: 1.0),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.file(
+                            File(
+                              _listImagePaths[index].path,
+                            ),
+                            fit: BoxFit.cover,
+                          );
+                  }),
+              RaisedButton(
+                onPressed: () {
+                  selectImages();
+                },
+                child: Text("选择图片"),
+              ),
+              GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: _listVideoPaths == null ? 0 : _listVideoPaths.length,
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 20.0,
+                      crossAxisSpacing: 10.0,
+                      childAspectRatio: 1.0),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.file(
+                      File(
+                        _listVideoPaths[index].thumbPath,
+                      ),
+                      fit: BoxFit.cover,
+                    );
+                  }),
+              RaisedButton(
+                onPressed: () {
+                  selectVideos();
+                },
+                child: Text("选择视频"),
+              )
+            ],
+          ),
         ),
       ),
     );
