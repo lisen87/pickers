@@ -6,9 +6,14 @@ import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.leeson.pickers.AppPath;
 import com.leeson.pickers.R;
@@ -46,15 +51,25 @@ public class SaveImageToGalleryActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK){
             if (requestCode == WRITE_SDCARD){
-                Glide.with(this).asBitmap().load(imageUrl).into(new SimpleTarget<Bitmap>() {
+                Glide.with(this).asBitmap().load(imageUrl).listener(new RequestListener<Bitmap>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                        Toast.makeText(SaveImageToGalleryActivity.this,"保存失败",Toast.LENGTH_SHORT).show();
+                        setResult(RESULT_CANCELED);
+                        finish();
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                        return false;
+                    }
+                }).into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(@NotNull Bitmap resource, Transition<? super Bitmap> transition) {
                         String path = CommonUtils.saveBitmap(SaveImageToGalleryActivity.this, new AppPath(SaveImageToGalleryActivity.this).getShowedImgPath(), resource);
                         notifyImages(path);
-                        Intent intent = new Intent();
-                        intent.putExtra(PATH,path);
-                        setResult(RESULT_OK,intent);
-                        finish();
+
                     }
                 });
             }
@@ -75,9 +90,21 @@ public class SaveImageToGalleryActivity extends BaseActivity {
             @Override
             public void onScanCompleted(String s, Uri uri) {
                 mediaScannerConnection.disconnect();
+                Intent intent = new Intent();
+                intent.putExtra(PATH,path);
+                setResult(RESULT_OK,intent);
+                finish();
             }
         };
         mediaScannerConnection = new MediaScannerConnection(this,client);
         mediaScannerConnection.connect();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mediaScannerConnection != null && mediaScannerConnection.isConnected()){
+            mediaScannerConnection.disconnect();
+        }
+        super.onDestroy();
     }
 }

@@ -109,10 +109,7 @@ class _MyAppState extends State<MyApp> {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: (){
-                        //http://apis.beboy.me/static/video/2019/07/20190718133449348263.mp4
-                        //http://apis.beboy.me/static/video/2019/07/20190718133449348263.jpg
                         Pickers.previewVideo(_listVideoPaths[index].path,);
-//                        Pickers.previewVideo("http:\/\/apis.beboy.me\/static\/video\/2019\/07\/20190705113839177259.mp4");
                       },
                       child: Image.file(
                         File(
@@ -129,10 +126,10 @@ class _MyAppState extends State<MyApp> {
                 child: Text("选择视频"),
               ),
 
-              Image.network("http://apis.beboy.me/static/video/2019/07/20190718133449348263.jpg",fit: BoxFit.cover,width: 100,height: 100,),
+              Image.network("http://via.placeholder.com/350x150",fit: BoxFit.cover,width: 100,height: 100,),
               RaisedButton(
                 onPressed: () {
-                  Future<String> future = Pickers.saveImageToGallery("http://apis.beboy.me/static/video/2019/07/201907181334493482630.jpg");
+                  Future<String> future = Pickers.saveImageToGallery("http://via.placeholder.com/350x150");
                   future.then((path){
                     print("保存图片路径："+ path);
                   });

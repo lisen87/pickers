@@ -79,6 +79,7 @@ class Pickers {
       'path': imageUrl,
     };
     String path = await _channel.invokeMethod('saveImageToGallery',params);
+    print("path = "+path);
     return path;
   }
 }

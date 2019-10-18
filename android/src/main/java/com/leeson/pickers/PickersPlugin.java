@@ -38,13 +38,23 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
         this.registrar.addActivityResultListener(new PluginRegistry.ActivityResultListener() {
             @Override
             public boolean onActivityResult(int requestCode, int resultCode, Intent intent) {
-                if (requestCode == SELECT && resultCode == Activity.RESULT_OK) {
-                    List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
-                    result.success(paths);
+                if (requestCode == SELECT ) {
+                    if (resultCode == Activity.RESULT_OK){
+                        List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
+                        result.success(paths);
+                    }else{
+                        result.success(new ArrayList<>());
+                    }
                     return true;
-                }else if (requestCode == SAVE_IMAGE && resultCode == Activity.RESULT_OK){
-                    String path = intent.getStringExtra(SaveImageToGalleryActivity.PATH);
-                    result.success(path);
+                }else if (requestCode == SAVE_IMAGE){
+                    if (resultCode == Activity.RESULT_OK){
+                        String path = intent.getStringExtra(SaveImageToGalleryActivity.PATH);
+                        result.success(path);
+                    }else{
+                        result.success("");
+                    }
+                }else{
+                    result.notImplemented();
                 }
                 return false;
             }
@@ -96,17 +106,17 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
         } else if ("previewImage".equals(methodCall.method)) {
             Intent intent = new Intent(registrar.context(), PhotosActivity.class);
             List<String> images = new ArrayList<>();
-            images.add(methodCall.argument("path").toString());
+            images.add(String.valueOf(methodCall.argument("path")));
             intent.putExtra(PhotosActivity.IMAGES, (Serializable) images);
             (registrar.activity()).startActivity(intent);
         }else if ("previewVideo".equals(methodCall.method)) {
             Intent intent = new Intent(registrar.context(), VideoActivity.class);
-            intent.putExtra(VideoActivity.VIDEO_PATH, methodCall.argument("path").toString());
-            intent.putExtra(VideoActivity.THUMB_PATH, methodCall.argument("thumbPath").toString());
+            intent.putExtra(VideoActivity.VIDEO_PATH, String.valueOf(methodCall.argument("path")));
+            intent.putExtra(VideoActivity.THUMB_PATH, String.valueOf(methodCall.argument("thumbPath")));
             (registrar.activity()).startActivity(intent);
         }else if("saveImageToGallery".equals(methodCall.method)){
             Intent intent = new Intent(registrar.context(), SaveImageToGalleryActivity.class);
-            intent.putExtra(SaveImageToGalleryActivity.PATH, methodCall.argument("path").toString());
+            intent.putExtra(SaveImageToGalleryActivity.PATH, String.valueOf(methodCall.argument("path")));
             (registrar.activity()).startActivityForResult(intent,SAVE_IMAGE);
         }else{
             result.notImplemented();
