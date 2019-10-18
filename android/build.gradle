@@ -46,4 +46,8 @@ dependencies {
     //图片裁剪 https://github.com/LuckSiege/PictureSelector
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     implementation 'top.zibin:Luban:1.1.8'
+
+    implementation ('com.github.chrisbanes.photoview:library:1.2.4'){
+        exclude group: 'com.android.support'
+    }
 }

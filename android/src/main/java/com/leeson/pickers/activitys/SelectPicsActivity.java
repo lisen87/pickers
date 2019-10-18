@@ -1,19 +1,21 @@
-package com.leeson.pickers;
+package com.leeson.pickers.activitys;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import com.leeson.pickers.AppPath;
+import com.leeson.pickers.R;
+import com.leeson.pickers.utils.CommonUtils;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,6 +36,8 @@ import top.zibin.luban.OnRenameListener;
 @SuppressWarnings("all")
 public class SelectPicsActivity extends BaseActivity {
 
+    private static final int WRITE_SDCARD = 101;
+
     public static final String GALLERY_MODE = "GALLERY_MODE";
     public static final String SHOW_CAMERA = "SHOW_CAMERA";
     public static final String ENABLE_CROP = "ENABLE_CROP";
@@ -47,33 +51,29 @@ public class SelectPicsActivity extends BaseActivity {
     private Number compressSize;
     private int compressCount = 0;
     private String mode;
+    private Number selectCount;
+    private boolean showCamera;
+    private boolean enableCrop;
+    private Number width;
+    private Number height;
 
     @Override
     public void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pics);
         mode = getIntent().getStringExtra(GALLERY_MODE);
-        Number selectCount = getIntent().getIntExtra(SELECT_COUNT,9);
-        boolean showCamera = getIntent().getBooleanExtra(SHOW_CAMERA,false);
-        boolean enableCrop = getIntent().getBooleanExtra(ENABLE_CROP,false);
-        Number width = getIntent().getIntExtra(WIDTH,1);
-        Number height = getIntent().getIntExtra(HEIGHT,1);
+        selectCount = getIntent().getIntExtra(SELECT_COUNT,9);
+        showCamera = getIntent().getBooleanExtra(SHOW_CAMERA,false);
+        enableCrop = getIntent().getBooleanExtra(ENABLE_CROP,false);
+        width = getIntent().getIntExtra(WIDTH,1);
+        height = getIntent().getIntExtra(HEIGHT,1);
         compressSize = getIntent().getIntExtra(COMPRESS_SIZE,500);
 
-        //添加图片
-        PictureSelector.create(this)
-                .openGallery("image".equals(mode) ? PictureMimeType.ofImage() : PictureMimeType.ofVideo())
-                .isCamera(showCamera)
-                .maxSelectNum(selectCount.intValue())
-                .withAspectRatio(width.intValue(),height.intValue())
-                .imageSpanCount(3)// 每行显示个数 int
-                .selectionMode(selectCount.intValue() == 1 ? PictureConfig.SINGLE : PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
-                .previewImage(true)// 是否可预览图片 true or false
-                .enableCrop(enableCrop)// 是否裁剪 true or false
-                .compress(false)// 是否压缩 true or false
-//                .minimumCompressSize(compressSize.intValue())// 小于100kb的图片不压缩
-                .compressSavePath(getPath())//压缩图片保存地址
-                .forResult(PictureConfig.CHOOSE_REQUEST);
+        Intent intent = new Intent(this, PermissionActivity.class);
+        intent.putExtra(PermissionActivity.PERMISSIONS, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ,Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA});
+        startActivityForResult(intent, WRITE_SDCARD);
     }
 
     private String getPath() {
@@ -127,6 +127,22 @@ public class SelectPicsActivity extends BaseActivity {
                     }
 
                     break;
+                case WRITE_SDCARD:
+                    //添加图片
+                    PictureSelector.create(this)
+                            .openGallery("image".equals(mode) ? PictureMimeType.ofImage() : PictureMimeType.ofVideo())
+                            .isCamera(showCamera)
+                            .maxSelectNum(selectCount.intValue())
+                            .withAspectRatio(width.intValue(),height.intValue())
+                            .imageSpanCount(3)// 每行显示个数 int
+                            .selectionMode(selectCount.intValue() == 1 ? PictureConfig.SINGLE : PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
+                            .previewImage(true)// 是否可预览图片 true or false
+                            .enableCrop(enableCrop)// 是否裁剪 true or false
+                            .compress(false)// 是否压缩 true or false
+//                .minimumCompressSize(compressSize.intValue())// 小于100kb的图片不压缩
+                            .compressSavePath(getPath())//压缩图片保存地址
+                            .forResult(PictureConfig.CHOOSE_REQUEST);
+                    break;
             }
         }else{
             finish();
@@ -139,7 +155,7 @@ public class SelectPicsActivity extends BaseActivity {
         for (int i = 0; i < paths.size(); i++) {
             String path = paths.get(i);
             Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(path, MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
-            String thumbPath = saveBitmap(bitmap);
+            String thumbPath = CommonUtils.saveBitmap(this,new AppPath(this).getImgPath(),bitmap);
             Map<String,String> map = new HashMap<>();
             map.put("thumbPath",thumbPath);
             map.put("path",path);
@@ -150,32 +166,6 @@ public class SelectPicsActivity extends BaseActivity {
         setResult(RESULT_OK,intent);
         finish();
     }
-
-    public String saveBitmap(Bitmap bitmap){
-        try {
-            File file = new File(new AppPath(this).getImgPath());
-            if (!file.exists()){
-                file.mkdirs();
-            }
-            File tempBitmap = new File(file,System.currentTimeMillis()+".png");
-            if (tempBitmap.exists()){
-                tempBitmap.delete();
-                tempBitmap.createNewFile();
-            }
-            FileOutputStream out = new FileOutputStream(tempBitmap,false);
-            if(bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)){
-                out.flush();
-                out.close();
-            }
-            return tempBitmap.getAbsolutePath();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
-
 
     private void lubanCompress(final List<String> paths){
         final List<Map<String,String>> lubanCompressPaths = new ArrayList<>();

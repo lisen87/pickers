@@ -1,11 +1,17 @@
 package com.leeson.pickers;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.leeson.pickers.activitys.PhotosActivity;
+import com.leeson.pickers.activitys.SaveImageToGalleryActivity;
+import com.leeson.pickers.activitys.SelectPicsActivity;
+import com.leeson.pickers.activitys.VideoActivity;
+
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +27,8 @@ import io.flutter.plugin.common.PluginRegistry;
 @SuppressWarnings("all")
 public class PickersPlugin implements MethodChannel.MethodCallHandler {
 
-    private static final int WRITE_SDCARD = 101;
     private static final int SELECT = 102;
+    private static final int SAVE_IMAGE = 103;
 
     private PluginRegistry.Registrar registrar;
     private MethodChannel.Result result;
@@ -32,15 +38,14 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
         this.registrar.addActivityResultListener(new PluginRegistry.ActivityResultListener() {
             @Override
             public boolean onActivityResult(int requestCode, int resultCode, Intent intent) {
-                if (requestCode == WRITE_SDCARD && resultCode == Activity.RESULT_OK) {
-                    openGallery();
-                    return true;
-                } else if (requestCode == SELECT && resultCode == Activity.RESULT_OK) {
+                if (requestCode == SELECT && resultCode == Activity.RESULT_OK) {
                     List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
                     result.success(paths);
                     return true;
+                }else if (requestCode == SAVE_IMAGE && resultCode == Activity.RESULT_OK){
+                    String path = intent.getStringExtra(SaveImageToGalleryActivity.PATH);
+                    result.success(path);
                 }
-
                 return false;
             }
         });
@@ -71,7 +76,7 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
         intent.putExtra(SelectPicsActivity.WIDTH,width);
         intent.putExtra(SelectPicsActivity.HEIGHT,height);
         intent.putExtra(SelectPicsActivity.COMPRESS_SIZE,compressSize);
-        ( registrar.activity()).startActivityForResult(intent, SELECT);
+        (registrar.activity()).startActivityForResult(intent, SELECT);
     }
 
     @Override
@@ -87,11 +92,23 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
             height = methodCall.argument("height");
             compressSize = methodCall.argument("compressSize");
 
-            Intent intent = new Intent(registrar.context(), PermissionActivity.class);
-            intent.putExtra(PermissionActivity.PERMISSIONS, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA});
-            ( registrar.activity()).startActivityForResult(intent, WRITE_SDCARD);
-        } else {
+            openGallery();
+        } else if ("previewImage".equals(methodCall.method)) {
+            Intent intent = new Intent(registrar.context(), PhotosActivity.class);
+            List<String> images = new ArrayList<>();
+            images.add(methodCall.argument("path").toString());
+            intent.putExtra(PhotosActivity.IMAGES, (Serializable) images);
+            (registrar.activity()).startActivity(intent);
+        }else if ("previewVideo".equals(methodCall.method)) {
+            Intent intent = new Intent(registrar.context(), VideoActivity.class);
+            intent.putExtra(VideoActivity.VIDEO_PATH, methodCall.argument("path").toString());
+            intent.putExtra(VideoActivity.THUMB_PATH, methodCall.argument("thumbPath").toString());
+            (registrar.activity()).startActivity(intent);
+        }else if("saveImageToGallery".equals(methodCall.method)){
+            Intent intent = new Intent(registrar.context(), SaveImageToGalleryActivity.class);
+            intent.putExtra(SaveImageToGalleryActivity.PATH, methodCall.argument("path").toString());
+            (registrar.activity()).startActivityForResult(intent,SAVE_IMAGE);
+        }else{
             result.notImplemented();
         }
     }

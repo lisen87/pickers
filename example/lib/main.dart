@@ -79,12 +79,17 @@ class _MyAppState extends State<MyApp> {
                       crossAxisSpacing: 10.0,
                       childAspectRatio: 1.0),
                   itemBuilder: (BuildContext context, int index) {
-                    return Image.file(
-                            File(
-                              _listImagePaths[index].path,
+                    return GestureDetector(
+                      onTap: (){
+                        Pickers.previewImage(_listImagePaths[index].path);
+                      },
+                      child: Image.file(
+                              File(
+                                _listImagePaths[index].path,
+                              ),
+                              fit: BoxFit.cover,
                             ),
-                            fit: BoxFit.cover,
-                          );
+                    );
                   }),
               RaisedButton(
                 onPressed: () {
@@ -102,11 +107,19 @@ class _MyAppState extends State<MyApp> {
                       crossAxisSpacing: 10.0,
                       childAspectRatio: 1.0),
                   itemBuilder: (BuildContext context, int index) {
-                    return Image.file(
-                      File(
-                        _listVideoPaths[index].thumbPath,
+                    return GestureDetector(
+                      onTap: (){
+                        //http://apis.beboy.me/static/video/2019/07/20190718133449348263.mp4
+                        //http://apis.beboy.me/static/video/2019/07/20190718133449348263.jpg
+                        Pickers.previewVideo(_listVideoPaths[index].path,);
+//                        Pickers.previewVideo("http:\/\/apis.beboy.me\/static\/video\/2019\/07\/20190705113839177259.mp4");
+                      },
+                      child: Image.file(
+                        File(
+                          _listVideoPaths[index].thumbPath,
+                        ),
+                        fit: BoxFit.cover,
                       ),
-                      fit: BoxFit.cover,
                     );
                   }),
               RaisedButton(
@@ -114,7 +127,18 @@ class _MyAppState extends State<MyApp> {
                   selectVideos();
                 },
                 child: Text("选择视频"),
-              )
+              ),
+
+              Image.network("http://apis.beboy.me/static/video/2019/07/20190718133449348263.jpg",fit: BoxFit.cover,width: 100,height: 100,),
+              RaisedButton(
+                onPressed: () {
+                  Future<String> future = Pickers.saveImageToGallery("http://apis.beboy.me/static/video/2019/07/201907181334493482630.jpg");
+                  future.then((path){
+                    print("保存图片路径："+ path);
+                  });
+                },
+                child: Text("保存图片"),
+              ),
             ],
           ),
         ),

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/services.dart';
 import 'package:pickers/CorpConfig.dart';
@@ -47,16 +48,37 @@ class Pickers {
       'height': height,
       'compressSize': compressSize < 50 ? 50 : compressSize,
     };
-    print(width.toString()+"  "+compressSize.toString()+" "+height.toString());
     final List<dynamic> paths = await _channel.invokeMethod('getPickerPaths',params);
     List<Media> medias = List();
     paths.forEach((data){
       Media media = Media();
       media.thumbPath = data["thumbPath"];
       media.path = data["path"];
-      print(media.thumbPath+" = "+media.path);
+      media.galleryMode = galleryMode;
       medias.add(media);
     });
     return medias;
+  }
+
+  static previewImage(String imagePath) {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'path': imagePath,
+    };
+    _channel.invokeMethod('previewImage',params);
+  }
+  static previewVideo(String videoPath,{String thumbPath : ""}) {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'path': videoPath,
+      'thumbPath': thumbPath,
+    };
+    _channel.invokeMethod('previewVideo',params);
+  }
+
+  static Future<String> saveImageToGallery(String imageUrl) async {
+    final Map<String, dynamic> params = <String, dynamic>{
+      'path': imageUrl,
+    };
+    String path = await _channel.invokeMethod('saveImageToGallery',params);
+    return path;
   }
 }

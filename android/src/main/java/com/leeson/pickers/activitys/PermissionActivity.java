@@ -1,4 +1,4 @@
-package com.leeson.pickers;
+package com.leeson.pickers.activitys;
 
 import android.os.Bundle;
 
@@ -40,6 +40,8 @@ public class PermissionActivity extends BaseActivity {
     @Override
     public void permissonNecessity(int requestCode) {
         super.permissonNecessity(requestCode);
-        showSettingDialog();
+        setResult(RESULT_CANCELED);
+        finish();
+//        showSettingDialog();
     }
 }
