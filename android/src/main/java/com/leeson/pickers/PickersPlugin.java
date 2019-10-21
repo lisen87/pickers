@@ -43,7 +43,7 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
                         List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
                         result.success(paths);
                     }else{
-                        result.success(new ArrayList<>());
+//                        result.success(new ArrayList<>());
                     }
                     return true;
                 }else if (requestCode == SAVE_IMAGE){
@@ -51,7 +51,7 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
                         String path = intent.getStringExtra(SaveImageToGalleryActivity.PATH);
                         result.success(path);
                     }else{
-                        result.success("");
+//                        result.success("");
                     }
                 }else{
                     result.notImplemented();

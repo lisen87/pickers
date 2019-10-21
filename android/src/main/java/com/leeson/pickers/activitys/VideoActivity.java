@@ -1,15 +1,17 @@
 package com.leeson.pickers.activitys;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -42,6 +44,9 @@ public class VideoActivity extends BaseActivity{
     private String videoPath;
     private String thumbPath;
 
+    private DisplayMetrics outMetrics;
+    private int videoHeight,videoWidth;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -58,6 +63,9 @@ public class VideoActivity extends BaseActivity{
         videoPath = getIntent().getStringExtra(VIDEO_PATH);
         thumbPath = getIntent().getStringExtra(THUMB_PATH);
 
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
 
         Intent intent = new Intent(this, PermissionActivity.class);
         intent.putExtra(PermissionActivity.PERMISSIONS, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE});
@@ -80,7 +88,9 @@ public class VideoActivity extends BaseActivity{
                 videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared(MediaPlayer mediaPlayer) {
-                        updateVideoViewSize(mediaPlayer.getVideoWidth(),mediaPlayer.getVideoHeight());
+                        videoHeight = mediaPlayer.getVideoHeight();
+                        videoWidth = mediaPlayer.getVideoWidth();
+                        updateVideoViewSize();
                         mediaPlayer.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT);
                         mediaPlayer.setOnInfoListener(new MediaPlayer.OnInfoListener() {
                             @Override
@@ -120,11 +130,32 @@ public class VideoActivity extends BaseActivity{
         }
     }
 
-    private void updateVideoViewSize(float videoWidth, float videoHeight) {
-        RelativeLayout.LayoutParams videoViewParam;
-        int height = (int) ((videoHeight / videoWidth) * videoParent.getWidth());
-        videoViewParam = new RelativeLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, height);
-        videoView.setLayoutParams(videoViewParam);
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            updateVideoViewSize();
+        }else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            updateVideoViewSize();
+        }
+    }
+
+    private void updateVideoViewSize() {
+        if (videoHeight == 0 || videoWidth == 0){
+            return;
+        }
+        Configuration mConfiguration = getResources().getConfiguration(); //获取设置的配置信息
+        if (mConfiguration.orientation == Configuration.ORIENTATION_PORTRAIT){
+            RelativeLayout.LayoutParams videoViewParam;
+            float height = ((videoHeight*1f / videoWidth) * outMetrics.widthPixels);
+            videoViewParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, (int) height);
+            videoView.setLayoutParams(videoViewParam);
+        }else{
+            RelativeLayout.LayoutParams videoViewParam;
+            float width = ((videoWidth*1f / videoHeight) * outMetrics.widthPixels);
+            videoViewParam = new RelativeLayout.LayoutParams((int) width,RelativeLayout.LayoutParams.MATCH_PARENT);
+            videoView.setLayoutParams(videoViewParam);
+        }
     }
     @Override
     protected void onDestroy() {
