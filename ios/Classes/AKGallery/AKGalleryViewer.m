@@ -210,61 +210,6 @@
 - (void)niehe:(UILongPressGestureRecognizer*)longPressGesture{
     
 }
-//{
-//    if ([self.gallery memoId]) {
-//        if (longPressGesture.state == UIGestureRecognizerStateBegan) {
-//            NSArray *arr =@[@"收藏",@"保存图片"];
-//            //选择银行
-//            SRActionSheet *actionSheet = [SRActionSheet sr_actionSheetViewWithTitle:nil cancelTitle:@"取消" destructiveTitle:nil withNumber:@"2" withLineNumber:@"1" otherTitles:arr otherImages:nil  selectActionBlock:^(SRActionSheet *actionSheet, NSInteger index) {
-//                if (index<0||index>arr.count-1) {
-//                    return;
-//                }
-//                else if(index==1){
-//                    UIImageWriteToSavedPhotosAlbum(self.imgView.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
-//
-//                }else{
-////                    [MBProgressHUD showSuccess:@"收藏成功" ToView:actionSheet];
-//                    NSLog(@"------%@",[self.gallery itemForRow:self.index].url);
-//                    [self collectionThePhoto];
-//
-//                }
-//
-//            }];
-//
-//
-//            [actionSheet show];
-//
-//        }else if (longPressGesture.state == UIGestureRecognizerStateEnded){
-//            return;
-//
-//        }
-//    }else{
-//        if (longPressGesture.state == UIGestureRecognizerStateBegan) {
-//            NSArray *arr =@[@"保存图片"];
-//
-////            //选择银行
-////            SRActionSheet *actionSheet = [SRActionSheet sr_actionSheetViewWithTitle:nil cancelTitle:@"取消" destructiveTitle:nil withNumber:@"2" withLineNumber:@"1" otherTitles:arr otherImages:nil  selectActionBlock:^(SRActionSheet *actionSheet, NSInteger index) {
-////                if (index<0||index>arr.count-1) {
-////                    return;
-////                }
-////                else if(index==0){
-////                    UIImageWriteToSavedPhotosAlbum(self.imgView.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
-////
-////                }
-////
-////            }];
-////
-////
-////            [actionSheet show];
-////
-////        }else if (longPressGesture.state == UIGestureRecognizerStateEnded){
-////            return;
-////
-////        }
-////    }
-//
-//
-//}
 -(void)collectionThePhoto{
   
     
@@ -298,78 +243,13 @@
     {
         message = [error description];
     }
-    NSLog(@"message is %@",message);
+    //NSLog(@"message is %@",message);
 }
 
 
 -(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale{
-//    AKLog(@"end zoom %f",scale);
     
 }
-
-//-(void)userPan:(UIPanGestureRecognizer*)pan{
-//    
-//    
-//    UIGestureRecognizerState state= pan.state;
-//    
-//    CGPoint  point=  [pan locationInView:pan.view];
-//    
-//    AKLog(@"user pan %@",NSStringFromCGPoint(point));
-//    float progressY= fabs(point.y-self.view.center.y)/self.view.center.y;
-//    float progressX= fabs(point.x-self.view.center.x)/self.view.center.x;
-////    float progress = MAX(progressY,progressX);
-//    
-//    AKLog(@"pan x:%f y:%f g:%f",progressX,progressY,progress);
-//    
-//    //    if(progress>0.3){
-//    //
-//    //        if (!self.interativeDismiss) {
-//    //            self.interativeDismiss=AKInterativeDismissToList.new;
-//    //        }
-//    //        [self.navigationController popViewControllerAnimated:YES];
-//    //
-//    //
-//    //    }
-//    //    else{
-//    ////        [pan cancelsTouchesInView];
-//    ////        pan.enabled=NO;
-//    ////        pan.enabled=YES;
-//    //    }
-//    switch (state) {
-//        case UIGestureRecognizerStateBegan:
-//        {
-//        }
-//            break;
-//            
-//        case UIGestureRecognizerStateChanged:
-//        {
-//            self.interativeDismiss.center= point;
-//            //            [self.interativeDismiss updateInteractiveTransition:progress];
-//            
-//        }
-//            break;
-//            
-//        case UIGestureRecognizerStateEnded:
-//        {
-//            AKLog(@"pan end");
-//            userPan.enabled=NO;
-//            
-//        }
-//            
-//        case UIGestureRecognizerStateCancelled:
-//        {
-//            //            if (progress>0.3) {
-//            //                [self.interativeDismiss finishInteractiveTransition];
-//            //            }else{
-//            //                [self.interativeDismiss cancelInteractiveTransition];
-//            //            }
-//            //            self.interativeDismiss=nil;
-//        }
-//            
-//        default:
-//            break;
-//    }
-//}
 
 
 

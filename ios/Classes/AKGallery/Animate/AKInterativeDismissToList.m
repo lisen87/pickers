@@ -158,7 +158,7 @@
     
     UIView* container= [self.ctx containerView];
     [container addSubview:self.toView];
-    NSLog(@"startInteractiveTransition %ld",container.subviews.count);
+    //NSLog(@"startInteractiveTransition %ld",container.subviews.count);
     
     UIView* bgView= [[UIView alloc]initWithFrame:self.finalVCFrame];
     bgView.backgroundColor=[UIColor whiteColor];
@@ -228,7 +228,7 @@
     
         [super updateInteractiveTransition:1-percentComplete];
         
-        NSLog(@"updateInteractiveTransition %f",1-percentComplete);
+        //NSLog(@"updateInteractiveTransition %f",1-percentComplete);
         
         self.bgView.alpha=percentComplete;
         
@@ -242,7 +242,7 @@
 
 
 - (void)cancelInteractiveTransition{
-    NSLog(@"cancelInteractiveTransition %f",self.percentComplete);
+    //NSLog(@"cancelInteractiveTransition %f",self.percentComplete);
     [super cancelInteractiveTransition];
     
     if(self.percentComplete==0){
@@ -274,7 +274,7 @@
 - (void)finishInteractiveTransition{
     [super finishInteractiveTransition];
     
-    NSLog(@"finishInteractiveTransition");
+    //NSLog(@"finishInteractiveTransition");
     
     
     

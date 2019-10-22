@@ -4,8 +4,8 @@
 #import <ZLPhotoBrowser/ZLShowBigImgViewController.h>
 #import "AKGallery.h"
 #import "PlayTheVideoVC.h"
-
-#define Frame_rectStatus ([[UIApplication sharedApplication] statusBarFrame].size.height)
+#import <AssetsLibrary/AssetsLibrary.h>
+#define Frame_rectStatus ([[UIApplication sharedApplication] statusBarFrame].size.height)
 #define Frame_rectNav (self.navigationController.navigationBar.frame.size.height)
 #define Frame_NavAndStatus (self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height)
 #define CXCHeightX   ( ([UIScreen mainScreen].bounds.size.height>=812.00)?([[UIScreen mainScreen] bounds].size.height-34):([[UIScreen mainScreen] bounds].size.height)/1.000)
@@ -90,7 +90,7 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                     PHImageManager *manager = [PHImageManager defaultManager];
                     [manager requestAVAssetForVideo:phAsset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
 
-                        NSLog(@"%@",info);
+//                        NSLog(@"%@",info);
                         
                         AVURLAsset *urlAsset = (AVURLAsset *)asset;
                         NSURL *url = urlAsset.URL;
@@ -100,18 +100,18 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                         formatter.dateFormat = @"yyyyMMddHHmmss";
                         int  x = arc4random() % 10000;
                         NSString *name = [NSString stringWithFormat:@"%@%d",[formatter stringFromDate:[NSDate date]],x];
-                        NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@.png",name]];
+                        NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",name]];
                         UIImage *img = [self getImage:subString]  ;
                         //保存到沙盒
                         [UIImageJPEGRepresentation(img,1.0) writeToFile:jpgPath atomically:YES];
-                        NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),name];
+                        NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),name];
                         //取出路径
                         
                         [arr addObject:@{
                                          @"thumbPath":[NSString stringWithFormat:@"%@",aPath3],
                                          @"path":[NSString stringWithFormat:@"%@",subString],
                                          }];
-                        NSLog(@"%@",arr);
+                        //NSLog(@"%@",arr);
                         if (arr.count==assets.count) {
                             result(arr);
                             
@@ -131,7 +131,7 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                         [manage requestImageDataForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
                             
                             UIImage *im =[UIImage imageWithData:imageData];
-                            NSLog(@"info==%@",info);
+                            //NSLog(@"info==%@",info);
                             NSURL * path = [info objectForKey:@"PHImageFileURLKey"];
                             NSString *str =path.absoluteString;
                             NSString *subString = [str substringFromIndex:7];
@@ -141,17 +141,17 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                                 formatter.dateFormat = @"yyyyMMddHHmmss";
                                 NSString *name = [NSString stringWithFormat:@"%@%@",[formatter stringFromDate:[NSDate date]],[str lastPathComponent]];
-                                NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@.png",name]];
+                                NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",name]];
                                 //保存到沙盒
                                 [UIImageJPEGRepresentation(im,1.0) writeToFile:jpgPath atomically:YES];
-                                NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),name];
+                                NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),name];
                                 //取出路径
                                 [arr addObject:[NSString stringWithFormat:@"%@",aPath3]];
                                 
                             }else{
                                 [arr addObject:[NSString stringWithFormat:@"%@",subString]];
                             }
-                            NSLog(@"%@",arr);
+                            //NSLog(@"%@",arr);
                             
                             if (arr.count==assets.count) {
                                 NSMutableArray *urlArr =[[NSMutableArray alloc]init];
@@ -163,17 +163,17 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                                         //压缩
                                         data2=UIImageJPEGRepresentation(imag, (float)(data2.length/compressSize));
                                     }
-                                    NSLog(@"_______%ld",data2.length);
+                                    //NSLog(@"_______%ld",data2.length);
                                     UIImage *image =[UIImage imageWithData:data2];
                                     //重命名并且保存
                                     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                                     formatter.dateFormat = @"yyyyMMddHHmmss";
                                     NSString*urlString =arr[i];
                                     NSString *name = [NSString stringWithFormat:@"%@01%@",[formatter stringFromDate:[NSDate date]],[urlString lastPathComponent]];
-                                    NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@.png",name]];
+                                    NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",name]];
                                     //保存到沙盒
                                     [UIImageJPEGRepresentation(image,1.0) writeToFile:jpgPath atomically:YES];
-                                    NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),name];
+                                    NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),name];
                                     NSDictionary *photoDic =@{
                                                               @"thumbPath":[NSString stringWithFormat:@"%@",aPath3],
                                                               @"path":[NSString stringWithFormat:@"%@",aPath3],
@@ -215,7 +215,7 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
             gallery.custUI=AKGalleryCustUI.new;
             gallery.selectIndex=0;
             gallery.completion=^{
-                NSLog(@"completion gallery");
+                //NSLog(@"completion gallery");
             };
             //show gallery
             [[UIApplication sharedApplication].delegate.window.rootViewController presentAKGallery:gallery animated:YES completion:nil];
@@ -230,7 +230,7 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
             gallery.custUI=AKGalleryCustUI.new;
             gallery.selectIndex=0;
             gallery.completion=^{
-                NSLog(@"completion gallery");
+                //NSLog(@"completion gallery");
             };
             //show gallery
             [[UIApplication sharedApplication].delegate.window.rootViewController presentAKGallery:gallery animated:YES completion:nil];
@@ -247,9 +247,35 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
         NSDictionary *dic = call.arguments;
 
         UIImage *img =[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[dic objectForKey:@"path"]]]]];
-        
-        UIImageWriteToSavedPhotosAlbum(img, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
+        __block ALAssetsLibrary *lib = [[ALAssetsLibrary alloc] init];
+        [lib writeImageToSavedPhotosAlbum:img.CGImage metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
+         {
+            NSString *str =assetURL.absoluteString;
+            NSString *string =@"://";
+            NSRange range = [str rangeOfString:string];//匹配得到的下标
+            if(range.location+range.length<str.length){
+                str = [str substringFromIndex:range.location+range.length];
+                //NSLog(@"%@",str);
+                
+                if (error) {
+                    
+                }else{
+                    result([NSString stringWithFormat:@"/%@",str]);
+                }
+            }
+           
+            
+
+        }];
+        
+        
+        
+        
+        
+        
+     
+        
     }
     
 }
@@ -277,15 +303,5 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
     
     return thumb;
 }
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-    
-    // 保存完毕
-    if (error) {
-        
-        NSLog(@"保存失败");
-    }else{
-        
-        NSLog(@"保存成功");
-    }
-}
+
 @end

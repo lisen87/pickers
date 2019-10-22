@@ -6,15 +6,12 @@ PODS:
   - SDWebImage (5.1.1):
     - SDWebImage/Core (= 5.1.1)
   - SDWebImage/Core (5.1.1)
-  - video_player (0.0.1):
-    - Flutter
   - ZLPhotoBrowser (3.1.1):
     - SDWebImage (~> 5.1.0)
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
   - pickers (from `.symlinks/plugins/pickers/ios`)
-  - video_player (from `.symlinks/plugins/video_player/ios`)
 
 SPEC REPOS:
   trunk:
@@ -26,14 +23,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   pickers:
     :path: ".symlinks/plugins/pickers/ios"
-  video_player:
-    :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  pickers: 12713903b61d8ed33659eb82a601cc38ca3ba2f6
+  pickers: 92b7f4907ed0773cf11256b28f7a6c42a5ac1026
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
-  video_player: 69c5f029fac4ffe4fc8a85ea7f7b793709661549
   ZLPhotoBrowser: 7d4a2cea21469d7e29680991ed38e5224786ed44
 
 PODFILE CHECKSUM: 914693c30a3cc33f5c91a29bb060d5a1ec39fd73

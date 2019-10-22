@@ -96,7 +96,6 @@
     
 }
 -(void)returnBtnAction{
-    NSLog(@"--------------cc------------");
     
     [self dismissViewControllerAnimated:YES completion:^{
         
