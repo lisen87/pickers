@@ -47,7 +47,6 @@
 -(void)setSelectIndex:(NSInteger)selectIndex{
     if (selectIndex<0||selectIndex>=self.items.count) {
         _selectIndex=0;
-        NSLog(@"Warning:selectIdx 越界");
     }else{
         _selectIndex=selectIndex;
         
