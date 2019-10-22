@@ -4,108 +4,14 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="339deeda-ea0d-4b66-91de-bbd4014b4beb" name="Default Changelist" comment="预览图片，保存图片到本地">
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGallery.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGallery.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryCustUI.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryCustUI.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryList.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryList.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryListCell.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryListCell.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryViewer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/AKGalleryViewer.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/Animate/AKInterativeDismissToList.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/Animate/AKInterativeDismissToList.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/PlayTheVideoVC.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/PlayTheVideoVC.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/img/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/img/left_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/img/left_arrow@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/img/right_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/AKGallery/img/right_arrow@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASCompositeConstraint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASCompositeConstraint.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASConstraint+Private.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASConstraint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASConstraint.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASConstraintMaker.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASConstraintMaker.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASLayoutConstraint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASLayoutConstraint.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASUtilities.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASViewAttribute.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASViewAttribute.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASViewConstraint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/MASViewConstraint.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/Masonry.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/NSArray+MASAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/NSArray+MASAdditions.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/NSArray+MASShorthandAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/NSLayoutConstraint+MASDebugAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/NSLayoutConstraint+MASDebugAdditions.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/View+MASAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/View+MASAdditions.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/View+MASShorthandAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/ViewController+MASAdditions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/Masonry/ViewController+MASAdditions.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Classes/fanhuiheise_btn.png" afterDir="false" />
+    <list default="true" id="339deeda-ea0d-4b66-91de-bbd4014b4beb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/PickersPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/PickersPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/NSBundle+TZImagePicker.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/NSBundle+TZImagePicker.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZAssetCell.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZAssetCell.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZAssetModel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZAssetModel.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZGifPhotoPreviewController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZGifPhotoPreviewController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageCropManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageCropManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/MMVideoPreviewPlay@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/MMVideoPreviewPlayHL@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/VideoSendIcon@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/en.lproj/Localizable.strings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/navi_back@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_def_photoPickerVc@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_def_previewVc@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_number_icon@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_original_def@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_original_sel@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_sel_photoPickerVc@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/photo_sel_previewVc@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/preview_number_icon@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/preview_original_def@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/takePicture80@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/takePicture@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/vi.lproj/Localizable.strings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/zh-Hans.lproj/Localizable.strings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.bundle/zh-Hant.lproj/Localizable.strings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImagePickerController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageRequestOperation.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZImageRequestOperation.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZLocationManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZLocationManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPickerController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPickerController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPreviewCell.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPreviewCell.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPreviewController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZPhotoPreviewController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZProgressView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZProgressView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZVideoPlayerController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/TZVideoPlayerController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/UIView+Layout.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/TZImagePickerController/UIView+Layout.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/pickers.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/pickers.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pickers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pickers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pickers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pickers.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -120,22 +26,35 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="127.0.0.1:5555" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="128" column="40" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
+            <state relative-caret-position="303">
+              <caret line="127" column="108" selection-start-line="127" selection-start-column="108" selection-end-line="127" selection-end-column="108" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ios/pickers.podspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="132">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1557">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
             </state>
           </provider>
         </entry>
@@ -143,11 +62,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pickers.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1254">
-              <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+            <state relative-caret-position="990">
+              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/activitys/SaveImageToGalleryActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/PickersPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -169,19 +106,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/pickers_test.dart" />
-        <option value="$PROJECT_DIR$/example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/ios/Classes/PickersPlugin.m" />
         <option value="$PROJECT_DIR$/lib/Media.dart" />
+        <option value="$PROJECT_DIR$/example/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/lib/pickers.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="151" />
+    <option name="x" value="242" />
     <option name="y" value="23" />
     <option name="width" value="1651" />
-    <option name="height" value="984" />
+    <option name="height" value="996" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -189,41 +127,51 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="activitys" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pickers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,13 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571388828896</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="视频横竖屏预览">
+      <created>1571625936091</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571625936092</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="151" y="23" width="1651" height="984" extended-state="0" />
+    <frame x="242" y="23" width="1651" height="996" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3424487" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14016342" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -295,17 +251,17 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32880098" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.88377875" visible="true" weight="0.3828033" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49968925" visible="true" weight="0.16440049" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.24227442" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.7426973" weight="0.7208481" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.11622126" side_tool="true" visible="true" weight="0.3828033" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49968925" weight="0.36236933" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003108" side_tool="true" weight="0.34494773" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.42150804" />
       <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49968925" weight="0.39222616" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.11495674" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -357,22 +313,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="预览图片，保存图片到本地" />
-    <option name="LAST_COMMIT_MESSAGE" value="预览图片，保存图片到本地" />
+    <MESSAGE value="视频横竖屏预览" />
+    <option name="LAST_COMMIT_MESSAGE" value="视频横竖屏预览" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/CorpConfig.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/flutter/packages/flutter/lib/src/widgets/framework.dart" />
     <entry file="file://$PROJECT_DIR$/example/build/app/tmp/kotlin-classes/release/com/leeson/pickers_example/MainActivity.class" />
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/PickersPlugin.java">
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="338">
+          <caret line="41" column="73" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -386,17 +336,16 @@
       </provider>
     </entry>
     <entry file="file://C:/flutter/packages/flutter/lib/src/widgets/image.dart" />
-    <entry file="file://$PROJECT_DIR$/example/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/ios/Runner/GeneratedPluginRegistrant.m" />
+    <entry file="file://$PROJECT_DIR$/example/ios/Runner/GeneratedPluginRegistrant.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="83" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ios/Classes/PickersPlugin.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3256">
@@ -411,7 +360,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/.idea/workspace.xml" />
+    <entry file="file://$PROJECT_DIR$/android/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2310">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -419,42 +374,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftPickersPlugin.swift">
+    <entry file="file://E:/qqfiles/453354858/FileRecv/pickers 2 下午1.16.26/pickers 2 下午1.16.26/ios/Classes/PickersPlugin.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="184">
+          <caret line="373" lean-forward="true" selection-start-line="373" selection-end-line="373" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/pickers.podspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1557">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CorpConfig.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Media.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/qqfiles/453354858/FileRecv/pickers 2 下午1.16.26/pickers 2 下午1.16.26/ios/Classes/PickersPlugin.m" />
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/AppPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="128" column="40" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
+        <state relative-caret-position="-66">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/activitys/PhotosActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2701">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftPickersPlugin.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/activitys/VideoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/activitys/SelectPicsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3477">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pickers.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        <state relative-caret-position="990">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/activitys/SaveImageToGalleryActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        <state relative-caret-position="123">
+          <caret line="57" column="46" lean-forward="true" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/leeson/pickers/PickersPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="127" column="108" selection-start-line="127" selection-start-column="108" selection-end-line="127" selection-end-column="108" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

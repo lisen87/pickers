@@ -6,7 +6,6 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:pickers/pickers.dart';
 import 'package:pickers/CorpConfig.dart';
-import 'package:video_player/video_player.dart';
 import 'package:pickers/Media.dart';
 
 void main() => runApp(MyApp());
@@ -126,10 +125,10 @@ class _MyAppState extends State<MyApp> {
                 child: Text("选择视频"),
               ),
 
-              Image.network("http://via.placeholder.com/350x150",fit: BoxFit.cover,width: 100,height: 100,),
+              Image.network("http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg",fit: BoxFit.cover,width: 100,height: 100,),
               RaisedButton(
                 onPressed: () {
-                  Future<String> future = Pickers.saveImageToGallery("http://via.placeholder.com/350x150");
+                  Future<String> future = Pickers.saveImageToGallery("http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
                   future.then((path){
                     print("保存图片路径："+ path);
                   });

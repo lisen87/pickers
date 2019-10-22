@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/services.dart';
 import 'package:pickers/CorpConfig.dart';
@@ -79,7 +78,6 @@ class Pickers {
       'path': imageUrl,
     };
     String path = await _channel.invokeMethod('saveImageToGallery',params);
-    print("path = "+path);
     return path;
   }
 }
