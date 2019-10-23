@@ -34,8 +34,8 @@ class Pickers {
     int height = 1;
     if(corpConfig != null){
       enableCrop = corpConfig.enableCrop;
-      width = corpConfig.width <= 0? 1 : width;
-      height = corpConfig.height <= 0? 1 : height;
+      width = corpConfig.width <= 0 ? 1 : corpConfig.width;
+      height = corpConfig.height <= 0 ? 1 : corpConfig.height;
     }
 
     final Map<String, dynamic> params = <String, dynamic>{
