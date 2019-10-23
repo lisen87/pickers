@@ -1,3 +1,5 @@
+## 1.0.1
+* Handling integration issues
 ## 1.0.0
 * Initial Open Sources
 * Support Android iOS

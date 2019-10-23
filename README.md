@@ -10,7 +10,7 @@ pickers Support picture selection, video multiple selection, support to save net
 
 ```yaml
 # add this line to your dependencies
-pickers: ^1.0.0
+pickers: ^1.0.1
 ```
 
 ```dart

@@ -19,8 +19,8 @@ import com.leeson.pickers.AppPath;
 import com.leeson.pickers.R;
 import com.leeson.pickers.utils.CommonUtils;
 
-import org.jetbrains.annotations.NotNull;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -66,7 +66,7 @@ public class SaveImageToGalleryActivity extends BaseActivity {
                     }
                 }).into(new SimpleTarget<Bitmap>() {
                     @Override
-                    public void onResourceReady(@NotNull Bitmap resource, Transition<? super Bitmap> transition) {
+                    public void onResourceReady(@NonNull Bitmap resource, Transition<? super Bitmap> transition) {
                         String path = CommonUtils.saveBitmap(SaveImageToGalleryActivity.this, new AppPath(SaveImageToGalleryActivity.this).getShowedImgPath(), resource);
                         notifyImages(path);
 
