@@ -1,3 +1,5 @@
+## 1.0.2
+* Android i OS supports local language environment (Chinese or English)
 ## 1.0.1
 * Handling integration issues
 ## 1.0.0

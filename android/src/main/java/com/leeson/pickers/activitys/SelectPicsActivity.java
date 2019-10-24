@@ -131,6 +131,7 @@ public class SelectPicsActivity extends BaseActivity {
                     //添加图片
                     PictureSelector.create(this)
                             .openGallery("image".equals(mode) ? PictureMimeType.ofImage() : PictureMimeType.ofVideo())
+                            .theme(R.style.picture_QQ_style)
                             .isCamera(showCamera)
                             .maxSelectNum(selectCount.intValue())
                             .withAspectRatio(width.intValue(),height.intValue())
