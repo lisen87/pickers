@@ -8,13 +8,13 @@ import com.leeson.pickers.activitys.SaveImageToGalleryActivity;
 import com.leeson.pickers.activitys.SelectPicsActivity;
 import com.leeson.pickers.activitys.VideoActivity;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry;
@@ -90,7 +90,7 @@ public class PickersPlugin implements MethodChannel.MethodCallHandler {
     }
 
     @Override
-    public void onMethodCall(MethodCall methodCall, @NotNull MethodChannel.Result result) {
+    public void onMethodCall(MethodCall methodCall, @NonNull MethodChannel.Result result) {
 
         this.result = result;
         if ("getPickerPaths".equals(methodCall.method)) {

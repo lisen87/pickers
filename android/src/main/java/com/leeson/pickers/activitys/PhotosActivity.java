@@ -19,7 +19,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.leeson.pickers.R;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -62,12 +61,12 @@ public class PhotosActivity extends BaseActivity {
         }
 
         @Override
-        public boolean isViewFromObject(@NotNull View view, @NotNull Object object) {
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
             return view== object;
         }
-        @NotNull
+        @NonNull
         @Override
-        public Object instantiateItem(@NotNull final ViewGroup container, final int position) {
+        public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
             View view = imageViews.get(position);
             if (view == null){
                 view = inflater.inflate(R.layout.item_activity_photos,container,false);

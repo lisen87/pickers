@@ -13,14 +13,14 @@
         <activity android:name=".activitys.VideoActivity" android:configChanges="orientation|screenSize"/>
         <activity android:name=".activitys.SaveImageToGalleryActivity" android:theme="@style/TransTheme" />
 
-        <provider
-            android:name=".provides.MyProvide"
-            android:authorities="com.leeson.pickers.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/pickers_plugin_file_path" />
-        </provider>
+<!--        <provider-->
+<!--            android:name=".provides.MyProvide"-->
+<!--            android:authorities="com.leeson.pickers.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/pickers_plugin_file_path" />-->
+<!--        </provider>-->
     </application>
 </manifest>
