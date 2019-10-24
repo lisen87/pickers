@@ -39,26 +39,27 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
         NSInteger selectCount =[[dic objectForKey:@"selectCount"] integerValue];//最多多少个
         NSInteger compressSize =[[dic objectForKey:@"compressSize"] integerValue]*1024;//大小
         NSString *galleryMode =[NSString stringWithFormat:@"%@",[dic objectForKey:@"galleryMode"]];//图片还是视频image video
-        BOOL enableCrop =![[dic objectForKey:@"enableCrop"] boolValue];//是否裁剪
+        BOOL enableCrop =[[dic objectForKey:@"enableCrop"] boolValue];//是否裁剪
         NSInteger height =[[dic objectForKey:@"height"] integerValue];//宽高比例
         NSInteger width =[[dic objectForKey:@"width"] integerValue];//宽高比例
         BOOL showCamera =[[dic objectForKey:@"showCamera"] boolValue];//显示摄像头
-        
-        //
+        //测试的
+        //               showCamera =YES;
         //                NSInteger selectCount =9;//最多多少个
         //                BOOL enableCrop =1;//是否裁剪
         //                float height = 1;//宽高比例
         //                float width = 10;//宽高比例
-        //        NSString *galleryMode =@"video";//图片还是视频image video
+        //                NSString *galleryMode =@"video";
         ZLPhotoActionSheet *ac = [[ZLPhotoActionSheet alloc] init];
-        ac.configuration.maxSelectCount = selectCount;
-        ac.configuration.allowMixSelect = NO;
-        ac.configuration.showCaptureImageOnTakePhotoBtn =showCamera;
+        ac.configuration.maxSelectCount = selectCount;//最多选择多少张图
+        ac.configuration.allowMixSelect = NO;//不允许混合选择
+        ac.configuration.allowTakePhotoInLibrary =showCamera;//是否显示摄像头
         ac.configuration.allowSelectOriginal =NO;//不选择原图
+        ac.configuration.allowEditImage =enableCrop;
         ac.configuration.hideClipRatiosToolBar =enableCrop;
         ac.configuration.clipRatios =@[@{
-                                           @"value1":[NSNumber numberWithInt:width],
-                                           @"value2":[NSNumber numberWithInt:height],
+                                           @"value1":[NSNumber numberWithInt:width],//第一个是宽
+                                           @"value2":[NSNumber numberWithInt:height],//第二个是高
                                            }];
         if ([galleryMode isEqualToString:@"image"]) {
             ac.configuration. allowSelectImage =YES;
@@ -83,14 +84,13 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
             for (NSInteger i = 0; i < assets.count; i++) {
                 // 获取一个资源（PHAsset）
                 PHAsset *phAsset = assets[i];
+                //视频
                 if (phAsset.mediaType == PHAssetMediaTypeVideo) {
                     PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
                     options.version = PHImageRequestOptionsVersionCurrent;
                     options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
                     PHImageManager *manager = [PHImageManager defaultManager];
                     [manager requestAVAssetForVideo:phAsset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
-
-//                        NSLog(@"%@",info);
                         
                         AVURLAsset *urlAsset = (AVURLAsset *)asset;
                         NSURL *url = urlAsset.URL;
@@ -106,7 +106,6 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                         [UIImageJPEGRepresentation(img,1.0) writeToFile:jpgPath atomically:YES];
                         NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),name];
                         //取出路径
-                        
                         [arr addObject:@{
                                          @"thumbPath":[NSString stringWithFormat:@"%@",aPath3],
                                          @"path":[NSString stringWithFormat:@"%@",subString],
@@ -151,7 +150,6 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                             }else{
                                 [arr addObject:[NSString stringWithFormat:@"%@",subString]];
                             }
-                            //NSLog(@"%@",arr);
                             
                             if (arr.count==assets.count) {
                                 NSMutableArray *urlArr =[[NSMutableArray alloc]init];
@@ -163,7 +161,7 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
                                         //压缩
                                         data2=UIImageJPEGRepresentation(imag, (float)(data2.length/compressSize));
                                     }
-                                    //NSLog(@"_______%ld",data2.length);
+                                    NSLog(@"_______%ld",data2.length);
                                     UIImage *image =[UIImage imageWithData:data2];
                                     //重命名并且保存
                                     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
