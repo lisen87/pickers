@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       _galleryMode = GalleryMode.image;
       _listImagePaths = await Pickers.pickerPaths(
           galleryMode: _galleryMode,
-          selectCount: 9,
+          selectCount: 1,
           showCamera: true,
           compressSize: 100,
           corpConfig: CorpConfig(enableCrop: true, width: 2, height: 10));

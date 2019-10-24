@@ -70,9 +70,9 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
             ac.configuration.allowSelectVideo =YES;
             
         }
-        ac.configuration.shouldAnialysisAsset = YES;
+//        ac.configuration.shouldAnialysisAsset = YES;
         //框架语言
-        ac.configuration.languageType = YES;
+//        ac.configuration.languageType = YES;
         //如调用的方法无sender参数，则该参数必传
         ac.sender = [UIApplication sharedApplication].delegate.window.rootViewController;
         ac.configuration.navBarColor =[UIColor whiteColor];
@@ -238,9 +238,11 @@ static NSString *const CHANNEL_NAME = @"flutter/pickers";
         NSDictionary *dic = call.arguments;
         PlayTheVideoVC *vc =[[PlayTheVideoVC alloc]init];
         vc.modalPresentationStyle=0;
+        //vc.videoUrl =[NSString stringWithFormat:@"%@",@"http://apis.beboy.me/static/video/2019/07/20190730160222392332.mp4"];
         vc.videoUrl =[NSString stringWithFormat:@"%@",[dic objectForKey:@"path"]];
         [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:vc animated:YES completion:^{
         }];
+        
     }else if([@"saveImageToGallery" isEqualToString:call.method]){
         NSDictionary *dic = call.arguments;
 
