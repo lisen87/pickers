@@ -1,12 +1,20 @@
 # [pickers](https://github.com/lisen87/pickers.git)
 
+pickers 支持本地图片多选，本地视频多选，支持将网络图片保存到相册，支持预览视频和预览图片功能
+
 pickers Support picture selection, video multiple selection, support to save network pictures to albums, support preview video and preview picture function
 
 > Supported  Platforms
 > * Android
 > * iOS
 
-## How to Use
+## 
+此插件(pickers)将不再更新，请查看 `image_pickers` [image_pickers](https://pub.dev/packages/image_pickers)
+
+# [image_pickers](https://pub.dev/packages/image_pickers)
+
+
+## pickers How to Use
 
 ```yaml
 # add this line to your dependencies

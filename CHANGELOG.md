@@ -1,3 +1,5 @@
+## 1.0.3
+* This plugin will not be updated anymore, please check the image_pickers plugin
 ## 1.0.2
 * Android i OS supports local language environment (Chinese or English)
 ## 1.0.1
